@@ -15,6 +15,7 @@ class Check
     public function handle($request, \Closure $next)
     {
         echo "后台中间件<br>";
+        //后台登录拦截
         return $next($request);
     }
 }
