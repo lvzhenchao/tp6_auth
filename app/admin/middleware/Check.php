@@ -16,6 +16,12 @@ class Check
     {
 //        echo "后台中间件<br>";
         //后台登录拦截
+        //判断是否有session
+        //判断是否是登录页面，防止多次重定向
+        $response = $next($request);
+        if (empty(session('adminAccount')) && $request->controller() != "Login") {
+            return redirect((string)url('Login/index'));
+        }
         
         return $next($request);
     }
