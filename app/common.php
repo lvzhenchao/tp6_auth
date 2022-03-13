@@ -18,7 +18,7 @@
 
 function alert($msg='',$url='',$icon='',$time=3){
 
-    $str='<script type="text/javascript" src="/public/static/index/js/jquery-3.4.1.min.js"></script><script type="text/javascript" src="/public/static/admin2/layer/2.4/layer.js"></script>';//加载jquery和layer
+    $str='<script type="text/javascript" src="/static/index/js/jquery-3.4.1.min.js"></script><script type="text/javascript" src="/static/admin2/layer/2.4/layer.js"></script>';//加载jquery和layer
 
     $str.='<script>$(function(){layer.msg("'.$msg.'",{icon:'.$icon.',time:'.($time*1000).'});setTimeout(function(){self.location.href="'.$url.'"},2000)});</script>';//主要方法
 
