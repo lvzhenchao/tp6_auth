@@ -7,6 +7,9 @@ class Index
 {
     public function index()
     {
-        return '您好！这是一个[admin]示例应用';
+        return "后台页面";
+        return view('',[
+            'left_menu'=>1,
+        ]);
     }
 }
