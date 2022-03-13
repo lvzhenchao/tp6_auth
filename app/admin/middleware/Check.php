@@ -14,12 +14,17 @@ class Check
      */
     public function handle($request, \Closure $next)
     {
-//        echo "后台中间件<br>";
         //后台登录拦截
         //判断是否有session
         //判断是否是登录页面，防止多次重定向
-        $response = $next($request);
-        if (empty(session('adminAccount')) && $request->controller() != "Login") {
+
+        //$response = $next($request);//后置中间件有问题
+
+//        if (empty(session('adminAccount')) && $request->controller() != "Login") {//后置使用
+//        echo "<br>后置中间件<br>";
+
+        if (empty(session('adminAccount')) && !preg_match("/login/", $request->pathinfo())) {
+
             return redirect((string)url('Login/index'));
         }
         
