@@ -25,7 +25,7 @@ class Check
 
         if (empty(session('adminAccount')) && !preg_match("/login/", $request->pathinfo())) {
 
-            return redirect((string)url('Login/index'));
+            return redirect((string)url('login/index'));
         }
         
         return $next($request);
