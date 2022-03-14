@@ -20,8 +20,8 @@ class Check
 
         //$response = $next($request);//后置中间件有问题
 
-//        if (empty(session('adminAccount')) && $request->controller() != "Login") {//后置使用
-//        echo "<br>后置中间件<br>";
+        //if (empty(session('adminAccount')) && $request->controller() != "Login") {//后置使用
+        //echo "<br>后置中间件<br>";
 
         if (empty(session('adminAccount')) && !preg_match("/login/", $request->pathinfo())) {
 
