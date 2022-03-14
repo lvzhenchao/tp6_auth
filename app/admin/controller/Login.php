@@ -22,7 +22,7 @@ class Login extends  BaseController
         if(request()->isPost()) {
 
             $data = input('post.');
-
+            
 
 
             // 通过用户名 获取 用户相关信息
